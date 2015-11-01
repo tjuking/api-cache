@@ -15,10 +15,10 @@ JavaScript对API数据的缓存组件，可以利用localStorage来存储不常�
 ```js
     var one = new ApiCache({
         name: "sidebar",
-        callback: function(ret){
+        callback: function(ret){ //对数据处理的回调函数
             console.log(ret);
         },
-        ajax: function(){
+        ajax: function(){ //发起请求的函数，需要返回Promise对象
             return $.ajax({
                 url: "/user/sidebar",
                 dataType: "json"
